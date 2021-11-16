@@ -2,11 +2,11 @@
 
 Perulangan adalah proses mengulang-ulang eksekusi blok kode tanpa henti, selama kondisi yang dijadikan acuan terpenuhi. Biasanya disiapkan variabel untuk iterasi atau variabel penanda kapan perulangan akan diberhentikan.
 
-Di Go keyword perulangan hanya **for** saja, tetapi meski demikian, kemampuannya merupakan gabungan `for`, `foreach`, dan `while` ibarat bahasa pemrograman lain.
+Di Go *keyword* perulangan hanya **for** saja, tetapi meski demikian, kemampuannya merupakan gabungan `for`, `foreach`, dan `while` ibarat bahasa pemrograman lain.
 
 ## A.14.1. Perulangan Menggunakan Keyword `for`
 
-Ada beberapa cara standar menggunakan `for`. Cara pertama dengan memasukkan variabel counter perulangan beserta kondisinya setelah keyword. Perhatikan dan praktekan kode berikut.
+Ada beberapa cara standar menggunakan `for`. Cara pertama dengan memasukkan variabel *counter* perulangan beserta kondisinya setelah *keyword*. Perhatikan dan praktekan kode berikut.
 
 ```go
 for i := 0; i < 5; i++ {
@@ -20,9 +20,9 @@ Perulangan di atas hanya akan berjalan ketika variabel `i` bernilai dibawah `5`,
 
 ## A.14.2. Penggunaan Keyword `for` Dengan Argumen Hanya Kondisi
 
-Cara ke-2 adalah dengan menuliskan kondisi setelah keyword `for` (hanya kondisi). Deklarasi dan iterasi variabel counter tidak dituliskan setelah keyword, hanya kondisi perulangan saja. Konsepnya mirip seperti `while` milik bahasa pemrograman lain.
+Cara ke-2 adalah dengan menuliskan kondisi setelah *keyword* `for` (hanya kondisi). Deklarasi dan iterasi variabel counter tidak dituliskan setelah *keyword*, hanya kondisi perulangan saja. Konsepnya mirip seperti `while` milik bahasa pemrograman lain.
 
-Kode berikut adalah contoh `for` dengan argumen hanya kondisi (seperti `if`), output yang dihasilkan sama seperti penerapan for cara pertama.
+Kode berikut adalah contoh `for` dengan argumen hanya kondisi (seperti `if`), *output* yang dihasilkan sama seperti penerapan `for` cara pertama.
 
 ```go
 var i = 0
@@ -35,7 +35,7 @@ for i < 5 {
 
 ## A.14.3. Penggunaan Keyword `for` Tanpa Argumen
 
-Cara ke-3 adalah `for` ditulis tanpa kondisi. Dengan ini akan dihasilkan perulangan tanpa henti (sama dengan `for true`). Pemberhentian perulangan dilakukan dengan menggunakan keyword `break`.
+Cara ke-3 adalah `for` ditulis tanpa kondisi. Dengan ini akan dihasilkan perulangan tanpa henti (sama dengan `for true`). Pemberhentian perulangan dilakukan dengan menggunakan *keyword* `break`.
 
 ```go
 var i = 0
@@ -50,17 +50,17 @@ for {
 }
 ```
 
-Dalam perulangan tanpa henti di atas, variabel `i` yang nilai awalnya `0` di-inkrementasi. Ketika nilai `i` sudah mencapai `5`, keyword `break` digunakan, dan perulangan akan berhenti.
+Dalam perulangan tanpa henti di atas, variabel `i` yang nilai awalnya `0` di-inkrementasi. Ketika nilai `i` sudah mencapai `5`, *keyword* `break` digunakan, dan perulangan akan berhenti.
 
 ## A.14.4. Penggunaan Keyword `for` - `range`
 
-Cara ke-4 adalah perulangan dengan menggunakan kombinasi keyword `for` dan `range`. Cara ini biasa digunakan untuk me-looping data bertipe array. Detailnya akan dibahas dalam bab selanjutnya (bab 14).
+Cara ke-4 adalah perulangan dengan menggunakan kombinasi *keyword* `for` dan `range`. Cara ini biasa digunakan untuk me-looping data bertipe *array*. Detailnya akan dibahas dalam bab selanjutnya (bab 14).
 
 ## A.14.5. Penggunaan Keyword `break` & `continue`
 
-Keyword `break` digunakan untuk menghentikan secara paksa sebuah perulangan, sedangkan `continue` dipakai untuk memaksa maju ke perulangan berikutnya.
+*Keyword* `break` digunakan untuk menghentikan secara paksa sebuah perulangan, sedangkan `continue` dipakai untuk memaksa maju ke perulangan berikutnya.
 
-Berikut merupakan contoh penerapan `continue` dan `break`. Kedua keyword tersebut dimanfaatkan untuk menampilkan angka genap berurutan yang lebih besar dari 0 dan dibawah 8.
+Berikut merupakan contoh penerapan `continue` dan `break`. Kedua *keyword* tersebut dimanfaatkan untuk menampilkan angka genap berurutan yang lebih besar dari 0 dan kurang dari atau sama dengan 8.
 
 ```go
 for i := 1; i <= 10; i++ {
@@ -105,7 +105,7 @@ Pada kode di atas, untuk pertama kalinya fungsi `fmt.Println()` dipanggil tanpa 
 
 ## A.14.7. Pemanfaatan Label Dalam Perulangan
 
-Di perulangan bersarang, `break` dan `continue` akan berlaku pada blok perulangan dimana ia digunakan saja. Ada cara agar kedua keyword ini bisa tertuju pada perulangan terluar atau perulangan tertentu, yaitu dengan memanfaatkan teknik pemberian **label**.
+Di perulangan bersarang, `break` dan `continue` akan berlaku pada blok perulangan dimana ia digunakan saja. Ada cara agar kedua *keyword* ini bisa tertuju pada perulangan terluar atau perulangan tertentu, yaitu dengan memanfaatkan teknik pemberian **label**.
 
 Program untuk memunculkan matriks berikut merupakan contoh penerapan label perulangan.
 
@@ -121,7 +121,7 @@ for i := 0; i < 5; i++ {
 }
 ```
 
-Tepat sebelum keyword `for` terluar, terdapat baris kode `outerLoop:`. Maksud dari kode tersebut adalah disiapkan sebuah label bernama `outerLoop` untuk `for` dibawahnya. Nama label bisa diganti dengan nama lain (dan harus diakhiri dengan tanda titik dua atau *colon* (`:`) ).
+Tepat sebelum *keyword* `for` terluar, terdapat baris kode `outerLoop:`. Maksud dari kode tersebut adalah disiapkan sebuah label bernama `outerLoop` untuk `for` dibawahnya. Nama label bisa diganti dengan nama lain (dan harus diakhiri dengan tanda titik dua atau *colon* (`:`) ).
 
 Pada `for` bagian dalam, terdapat seleksi kondisi untuk pengecekan nilai `i`. Ketika nilai tersebut sama dengan `3`, maka `break` dipanggil dengan target adalah perulangan yang dilabeli `outerLoop`, perulangan tersebut akan dihentikan.
 
